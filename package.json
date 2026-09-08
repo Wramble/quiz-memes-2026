@@ -13,7 +13,7 @@
     "optimize:video": "node media/optimize-videos.js",
     "optimize:audio": "node media/optimize-audio.js",
     "start": "gulp serve",
-    "editor": "node editor/server.js",
+    "editor": "node --watch editor/server.js",
     "test:editor": "node --test editor/test/file-store.test.js editor/test/quiz-document.test.js editor/test/quiz-model.test.js editor/test/server.test.js",
     "build": "gulp build"
   },
