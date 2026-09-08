@@ -2,7 +2,7 @@ const fs = require('node:fs/promises');
 const fsSync = require('node:fs');
 const http = require('node:http');
 const path = require('node:path');
-const { listMedia, writeDocumentWithBackup } = require('./lib/file-store.js');
+const { assertInside, listMedia, writeDocumentWithBackup } = require('./lib/file-store.js');
 
 function sendJson(response, status, payload) {
   response.writeHead(status, { 'content-type': 'application/json; charset=utf-8' });
@@ -51,6 +51,12 @@ function createEditorServer({ rootDir }) {
       if (request.method === 'GET' && request.url === '/editor/editor.css') {
         response.writeHead(200, { 'content-type': 'text/css; charset=utf-8' });
         return response.end(await fs.readFile(path.join(__dirname, 'public', 'editor.css')));
+      }
+      if (request.method === 'GET' && (/^\/(media|dist)\//).test(request.url)) {
+        const relative = decodeURIComponent(request.url.slice(1).split('?')[0]);
+        const filePath = assertInside(rootDir, path.join(rootDir, relative));
+        response.writeHead(200, { 'content-type': relative.endsWith('.css') ? 'text/css; charset=utf-8' : relative.endsWith('.js') ? 'text/javascript; charset=utf-8' : 'application/octet-stream' });
+        return response.end(await fs.readFile(filePath));
       }
       return sendJson(response, 404, { error: 'Not found' });
     } catch (error) { return sendJson(response, 400, { error: error.message }); }

@@ -71,3 +71,16 @@ test('serves editor stylesheet', async (t) => {
   assert.equal(response.status, 200);
   assert.match(response.body, /--surface/);
 });
+
+test('serves a media file below the project media directory', async (t) => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'quiz-editor-server-'));
+  await fs.writeFile(path.join(root, 'index.html'), '<html>quiz</html>');
+  await fs.mkdir(path.join(root, 'media'));
+  await fs.writeFile(path.join(root, 'media', 'picture.webp'), 'image');
+  const server = createEditorServer({ rootDir: root });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  t.after(async () => { await new Promise((resolve) => server.close(resolve)); await fs.rm(root, { recursive: true, force: true }); });
+  const response = await request(server.address().port, 'GET', '/media/picture.webp');
+  assert.equal(response.status, 200);
+  assert.equal(response.body, 'image');
+});
