@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Media loader tests</title>
+<link rel="stylesheet" href="../node_modules/qunit/qunit/qunit.css">
+<script src="../node_modules/qunit/qunit/qunit.js"></script>
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<script type="module">
+QUnit.config.testTimeout = 30000;
+
+QUnit.module( 'Media loader' );
+
+QUnit.test( 'keeps the loader until every media request finishes', async assert => {
+
+let mediaLoader;
+
+try {
+mediaLoader = await import( '../js/utils/media-loader.js?test=' + Date.now() );
+}
+catch( error ) {
+assert.ok( false, `Media loader module is unavailable: ${ error.message }` );
+return;
+}
+
+document.body.classList.add( 'media-loading' );
+document.body.insertAdjacentHTML( 'beforeend', `
+<div class="media-loader-test-root">
+<div id="media-loader"></div>
+<div class="reveal">Quiz content</div>
+<audio src="first.mp3"></audio>
+<video src="second.mp4"></video>
+</div>` );
+
+const requests = [];
+
+class FakeXHR {
+
+open( method, url ) {
+this.url = url;
+}
+
+send() {
+requests.push( this );
+}
+
+complete( success = true ) {
+this.response = new Blob();
+
+if( success ) {
+this.onload();
+}
+else {
+this.onerror();
+}
+
+this.onloadend();
+}
+
+}
+
+const loading = mediaLoader.initMediaLoader({
+document,
+xhr: FakeXHR,
+createObjectURL: () => 'blob:media-loader-test'
+});
+
+assert.strictEqual( requests.length, 2, 'starts one request for each media element' );
+assert.ok( document.querySelector( '#media-loader' ), 'keeps the loader while requests are pending' );
+
+requests[0].complete();
+await Promise.resolve();
+assert.ok( document.querySelector( '#media-loader' ), 'keeps the loader until the last request finishes' );
+
+requests[1].complete( false );
+await loading;
+
+assert.notOk( document.querySelector( '#media-loader' ), 'removes the loader after all requests finish' );
+assert.notOk( document.body.classList.contains( 'media-loading' ), 'reveals the content after loading' );
+assert.strictEqual( document.querySelector( 'audio' ).src, 'blob:media-loader-test#t=0', 'uses the loaded blob for media' );
+
+document.querySelector( '.media-loader-test-root' ).remove();
+document.body.classList.remove( 'media-loading' );
+
+} );
+</script>
+</body>
+</html>

@@ -12,11 +12,48 @@
 
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+        <style>
+            body.media-loading .reveal {
+                visibility: hidden;
+            }
+
+            #media-loader {
+                align-items: center;
+                background: #191919;
+                color: #fff;
+                display: flex;
+                font-family: sans-serif;
+                inset: 0;
+                justify-content: center;
+                position: fixed;
+                z-index: 10000;
+            }
+
+            #media-loader::before {
+                animation: media-loader-spin 0.8s linear infinite;
+                border: 40px solid rgba(255, 255, 255, 0.25);
+                border-radius: 50%;
+                border-top-color: #fff;
+                content: '';
+                height: 320px;
+                margin-right: 14px;
+                width: 320px;
+            }
+
+            @keyframes media-loader-spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
     </head>
-    <body>
+    <body class="media-loading">
         <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
+
+        <div id="media-loader" role="status" aria-live="polite"></div>
 
         <div style="position: absolute;right: 0;z-index: 9999;display: inline-flex;">
             <div style="display: grid;">
@@ -1072,34 +1109,11 @@
                 hash: true,
             });
 
-            document.addEventListener("DOMContentLoaded", () => {
-                let count = 0;
+        </script>
+        <script type="module">
+            import { initMediaLoader } from './js/utils/media-loader.js';
 
-                const medias = document.querySelectorAll('audio, video');
-
-                medias.forEach(element => {
-                    const timestamp = element.src.split('#t=')[1] ?? 0;
-
-                    let r = new XMLHttpRequest();					
-
-                    r.open("GET", element.src);
-
-                    r.responseType = "blob";
-
-                    r.onload = function() {
-                        element.src = URL.createObjectURL(r.response) + '#t=' + timestamp;
-
-                        count++;
-                        if (count == medias.length) {
-                            if (window.location.hostname != "localhost") {
-                                alert('Ready!');
-                            }
-                        }
-                    };
-
-                    r.send();
-                });
-            });
+            initMediaLoader();
         </script>
     </body>
 </html>
