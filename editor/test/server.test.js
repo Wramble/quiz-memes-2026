@@ -39,7 +39,7 @@ test('serves the editor page', async (t) => {
   const server = createEditorServer({ rootDir: root });
   await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
   t.after(async () => { await new Promise((resolve) => server.close(resolve)); await fs.rm(root, { recursive: true, force: true }); });
-  const response = await request(server.address().port, 'GET', '/editor/');
+  const response = await request(server.address().port, 'GET', '/');
   assert.equal(response.status, 200);
   assert.match(response.body, /Редактор квиза/);
 });

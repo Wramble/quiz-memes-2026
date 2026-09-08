@@ -28,7 +28,7 @@ function createEditorServer({ rootDir }) {
         const backup = await writeDocumentWithBackup(rootDir, payload.html);
         return sendJson(response, 200, { backup: path.basename(backup) });
       }
-      if (request.method === 'GET' && request.url === '/editor/') {
+      if (request.method === 'GET' && (request.url === '/' || request.url === '/editor/')) {
         response.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
         return response.end(await fs.readFile(path.join(__dirname, 'public', 'index.html')));
       }
