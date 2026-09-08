@@ -32,6 +32,18 @@ function renderQuiz() {
     replaceRegion('rounds', `${rounds.value}\n${block}`); status.textContent = `Добавлен пустой раунд «${name}». Нажмите «Сохранить».`; renderQuiz();
   };
 }
-document.querySelectorAll('[data-view]').forEach((button) => button.onclick = () => button.dataset.view === 'source' ? renderSource() : renderQuiz());
+function sections() { return [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)]; }
+function renderSlide() {
+  const list = sections();
+  view.innerHTML = `<h2>Слайд</h2><label>Секция <select id="section">${list.map((_, i) => `<option value="${i}">${i + 1}</option>`).join('')}</select></label><label>Шаблон <select id="template"><option value="">Не менять</option><option value="question">Вопрос</option><option value="answer">Ответ</option></select></label><button id="apply-template">Применить шаблон</button><br><label>Атрибут <input id="attribute" placeholder="data-autoslide=40000 или start-audio"></label><button id="apply-attribute">Добавить атрибут</button><br><label>Медиа <select id="slide-media"><option value="">Не вставлять</option>${media.map((file) => `<option>${file}</option>`).join('')}</select></label><button id="apply-media">Вставить в src</button><br><textarea id="section-code" style="width:48%;height:55vh"></textarea><button id="apply-code">Применить код секции</button>`;
+  const select = view.querySelector('#section'), code = view.querySelector('#section-code');
+  const refresh = () => { code.value = sections()[Number(select.value)]?.[0] || ''; }; refresh(); select.onchange = refresh;
+  const replaceSelected = (value) => { const match = sections()[Number(select.value)]; html = `${html.slice(0, match.index)}${value}${html.slice(match.index + match[0].length)}`; code.value = value; status.textContent = 'Секция изменена в памяти. Нажмите «Сохранить».'; };
+  view.querySelector('#apply-template').onclick = () => { const kind = view.querySelector('#template').value; if (kind) replaceSelected(kind === 'question' ? '<section data-autoslide="40000" data-autoslide-auto volumehalf><h2>Текст вопроса</h2></section>' : '<section><h2 class="fragment fade-up">Ответ</h2></section>'); };
+  view.querySelector('#apply-code').onclick = () => replaceSelected(code.value);
+  view.querySelector('#apply-attribute').onclick = () => { const raw = view.querySelector('#attribute').value.trim(); if (!raw) return; const [name, value] = raw.split('='); replaceSelected(code.value.replace('<section', `<section ${name}${value ? `="${value}"` : ''}`)); };
+  view.querySelector('#apply-media').onclick = () => { const selected = view.querySelector('#slide-media').value; if (!selected) return; replaceSelected(code.value.match(/\ssrc="[^"]*"/) ? code.value.replace(/\ssrc="[^"]*"/, ` src="${selected}"`) : code.value.replace('>', `><img src="${selected}" height="900px">`)); };
+}
+document.querySelectorAll('[data-view]').forEach((button) => button.onclick = () => ({ source: renderSource, slide: renderSlide, quiz: renderQuiz })[button.dataset.view]());
 document.querySelector('#save').onclick = async () => { const source = document.querySelector('#source'); if (source) html = source.value; const response = await fetch('/api/document', { method: 'PUT', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ html }) }); const payload = await response.json(); status.textContent = payload.error || `Сохранено; backup: ${payload.backup}`; };
 load().catch((error) => { status.textContent = error.message; });
