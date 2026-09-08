@@ -87,7 +87,10 @@ function createEditorServer({ rootDir }) {
           await fs.readFile(path.join(__dirname, "public", "editor.css")),
         );
       }
-      if (request.method === "GET" && /^\/(media|dist)\//.test(request.url)) {
+      if (
+        request.method === "GET" &&
+        /^\/(media|dist|plugin|js)\//.test(request.url)
+      ) {
         const relative = decodeURIComponent(request.url.slice(1).split("?")[0]);
         const filePath = assertInside(rootDir, path.join(rootDir, relative));
         response.writeHead(200, {

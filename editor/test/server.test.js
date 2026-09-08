@@ -140,3 +140,28 @@ test("serves a media file below the project media directory", async (t) => {
   assert.equal(response.status, 200);
   assert.equal(response.body, "image");
 });
+
+test("serves Reveal plugins used by the quiz document", async (t) => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "quiz-editor-server-"));
+  await fs.writeFile(path.join(root, "index.html"), "<html>quiz</html>");
+  await fs.mkdir(path.join(root, "media"));
+  await fs.mkdir(path.join(root, "plugin", "highlight"), { recursive: true });
+  await fs.writeFile(
+    path.join(root, "plugin", "highlight", "highlight.js"),
+    "window.RevealHighlight = {};",
+  );
+  const server = createEditorServer({ rootDir: root });
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  t.after(async () => {
+    await new Promise((resolve) => server.close(resolve));
+    await fs.rm(root, { recursive: true, force: true });
+  });
+
+  const response = await request(
+    server.address().port,
+    "GET",
+    "/plugin/highlight/highlight.js",
+  );
+  assert.equal(response.status, 200);
+  assert.equal(response.body, "window.RevealHighlight = {};");
+});

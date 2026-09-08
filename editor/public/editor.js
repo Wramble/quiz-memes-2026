@@ -34,26 +34,46 @@ function S(t, u = 1) {
 function put(i, n, v) {
   html = html.slice(0, i) + v + html.slice(i + n);
 }
+function previewResources() {
+  const source = new DOMParser().parseFromString(html, "text/html");
+  const styles = [...source.head.querySelectorAll('link[rel="stylesheet"], style')]
+    .map((element) => element.outerHTML)
+    .join("\n");
+  const scripts = [...source.body.querySelectorAll("script[src]")]
+    .filter((element) => element.type !== "module")
+    .map((element) => element.outerHTML)
+    .join("\n");
+
+  return { scripts, styles };
+}
 function view(p) {
   const f = document.createElement("iframe");
   const round = R()[ri]?.[2] || "";
+  const resources = previewResources();
 
   f.className = "slide-frame";
-  f.srcdoc = `<!doctype html>
+  f.srcdoc = `<!doctype html><html><head>
     <base href="${location.origin}/">
-    <link rel="stylesheet" href="dist/reset.css">
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/blood.css">
+    ${resources.styles}
     <style>
       html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
       .reveal-viewport { width: 100%; height: 100%; }
     </style>
+    </head><body>
     <div class="reveal"><div class="slides">${round}</div></div>
-    <script src="dist/reveal.js"></script>
+    ${resources.scripts}
     <script>
-      Reveal.initialize({ width: 1920, height: 1080, embedded: true, controls: false, progress: false, hash: false });
+      Reveal.initialize({
+        width: 1920,
+        height: 1080,
+        embedded: true,
+        controls: false,
+        progress: false,
+        hash: false,
+        plugins: [window.RevealNotes, window.RevealMarkdown, window.RevealHighlight].filter(Boolean)
+      });
       setTimeout(() => Reveal.slide(0, ${si}), 0);
-    </script>`;
+    </script></body></html>`;
   p.replaceChildren(f);
 }
 function draw() {
