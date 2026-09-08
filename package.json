@@ -13,6 +13,7 @@
     "optimize:video": "node media/optimize-videos.js",
     "optimize:audio": "node media/optimize-audio.js",
     "start": "gulp serve",
+    "editor": "node editor/server.js",
     "build": "gulp build"
   },
   "author": {

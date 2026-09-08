@@ -28,6 +28,14 @@ function createEditorServer({ rootDir }) {
         const backup = await writeDocumentWithBackup(rootDir, payload.html);
         return sendJson(response, 200, { backup: path.basename(backup) });
       }
+      if (request.method === 'GET' && request.url === '/editor/') {
+        response.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
+        return response.end(await fs.readFile(path.join(__dirname, 'public', 'index.html')));
+      }
+      if (request.method === 'GET' && request.url === '/editor/editor.js') {
+        response.writeHead(200, { 'content-type': 'text/javascript; charset=utf-8' });
+        return response.end(await fs.readFile(path.join(__dirname, 'public', 'editor.js')));
+      }
       return sendJson(response, 404, { error: 'Not found' });
     } catch (error) { return sendJson(response, 400, { error: error.message }); }
   });
