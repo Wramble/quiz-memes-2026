@@ -94,7 +94,7 @@ button {
 }
 .bottom #code {
   width: 100%;
-  height: 100%;
+  height: 7.5em;
   font:
     13px ui-monospace,
     monospace;
@@ -102,6 +102,14 @@ button {
 .media-list {
   overflow: auto;
 }
+.bar { display:flex; align-items:center; gap:4px; }
+.bar h3 { flex:1; }
+.bar button { width:32px; margin:0; text-align:center; }
+.config { margin-top:8px; border:1px solid var(--line); padding:8px; }
+.config label { display:grid; gap:3px; margin:5px 0; }
+.config input, .config textarea { width:100%; background:#11151d; color:var(--text); border:1px solid var(--line); }
+.config button { width:auto; }
+.all #a { width:100%; height:90%; }
 
 #save, #document-mode {
   width: 130px;
