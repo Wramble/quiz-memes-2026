@@ -18,6 +18,7 @@ Want to create reveal.js presentation in a graphical editor? Try <https://slides
 ---
 
 ### Getting started
+- Редактор текущего квиза: `npm run editor`, затем `http://127.0.0.1:8091/editor/`.
 - 🚀 [Install reveal.js](https://revealjs.com/installation)
 - 👀 [View the demo presentation](https://revealjs.com/demo)
 - 📖 [Read the documentation](https://revealjs.com/markup/)
