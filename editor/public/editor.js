@@ -47,8 +47,8 @@ function view(p) {
     <div class="reveal"><div class="slides">${round}</div></div>
     <script src="dist/reveal.js"><\/script>
     <script>
-      Reveal.initialize({ width: 1920, height: 1080, embedded: true, controls: false, progress: false, hash: false })
-        .then(() => Reveal.slide(0, ${si}));
+      Reveal.initialize({ width: 1920, height: 1080, embedded: true, controls: false, progress: false, hash: false });
+      setTimeout(() => Reveal.slide(0, ${si}), 0);
     <\/script>`;
   p.replaceChildren(f);
 }
