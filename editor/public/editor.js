@@ -35,10 +35,21 @@ function put(i, n, v) {
   html = html.slice(0, i) + v + html.slice(i + n);
 }
 function view(p) {
-  const f = document.createElement("iframe"),
-    round = R()[ri]?.[2] || "";
+  const f = document.createElement("iframe");
+  const round = R()[ri]?.[2] || "";
+
   f.className = "slide-frame";
-  f.srcdoc = `<!doctype html><base href="${location.origin}/"><link rel="stylesheet" href="dist/reset.css"><link rel="stylesheet" href="dist/reveal.css"><link rel="stylesheet" href="dist/theme/blood.css"><div class="reveal"><div class="slides">${round}</div></div><script type="module">import Reveal from '/dist/reveal.esm.js';const r=new Reveal();r.initialize({embedded:true,controls:false,progress:false,center:true}).then(()=>r.slide(0,${si}));</script>`;
+  f.srcdoc = `<!doctype html>
+    <base href="${location.origin}/">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/blood.css">
+    <div class="reveal"><div class="slides">${round}</div></div>
+    <script src="dist/reveal.js"><\/script>
+    <script>
+      Reveal.initialize({ width: 1920, height: 1080, embedded: true, controls: false, progress: false, hash: false })
+        .then(() => Reveal.slide(0, ${si}));
+    <\/script>`;
   p.replaceChildren(f);
 }
 function draw() {
