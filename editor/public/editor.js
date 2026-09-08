@@ -1,5 +1,7 @@
 let html = '';
 let media = [];
+const liveReload = new EventSource('/api/live-reload');
+liveReload.addEventListener('reload', () => location.reload());
 const view = document.querySelector('#view');
 const status = document.querySelector('#status');
 async function load() {

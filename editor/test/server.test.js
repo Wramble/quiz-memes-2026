@@ -43,3 +43,19 @@ test('serves the editor page', async (t) => {
   assert.equal(response.status, 200);
   assert.match(response.body, /Редактор квиза/);
 });
+
+test('opens an event stream for editor live reload', async (t) => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'quiz-editor-server-'));
+  await fs.writeFile(path.join(root, 'index.html'), '<html>quiz</html>');
+  await fs.mkdir(path.join(root, 'media'));
+  const server = createEditorServer({ rootDir: root });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  t.after(async () => { await new Promise((resolve) => server.close(resolve)); await fs.rm(root, { recursive: true, force: true }); });
+  const response = await new Promise((resolve, reject) => {
+    const request = http.get({ host: '127.0.0.1', port: server.address().port, path: '/api/live-reload' }, resolve);
+    request.on('error', reject);
+  });
+  assert.equal(response.statusCode, 200);
+  assert.match(response.headers['content-type'], /text\/event-stream/);
+  response.destroy();
+});

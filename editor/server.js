@@ -1,4 +1,5 @@
 const fs = require('node:fs/promises');
+const fsSync = require('node:fs');
 const http = require('node:http');
 const path = require('node:path');
 const { listMedia, writeDocumentWithBackup } = require('./lib/file-store.js');
@@ -18,8 +19,19 @@ function readBody(request) {
 }
 
 function createEditorServer({ rootDir }) {
-  return http.createServer(async (request, response) => {
+  const clients = new Set();
+  const watcher = fsSync.watch(path.join(__dirname, 'public'), { recursive: true }, () => {
+    for (const client of clients) client.write('event: reload\ndata: now\n\n');
+  });
+  const server = http.createServer(async (request, response) => {
     try {
+      if (request.method === 'GET' && request.url === '/api/live-reload') {
+        response.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache', connection: 'keep-alive' });
+        response.write(': connected\n\n');
+        clients.add(response);
+        request.on('close', () => clients.delete(response));
+        return;
+      }
       if (request.method === 'GET' && request.url === '/api/document') return sendJson(response, 200, { html: await fs.readFile(path.join(rootDir, 'index.html'), 'utf8') });
       if (request.method === 'GET' && request.url === '/api/media') return sendJson(response, 200, { files: await listMedia(rootDir) });
       if (request.method === 'PUT' && request.url === '/api/document') {
@@ -39,6 +51,8 @@ function createEditorServer({ rootDir }) {
       return sendJson(response, 404, { error: 'Not found' });
     } catch (error) { return sendJson(response, 400, { error: error.message }); }
   });
+  server.on('close', () => watcher.close());
+  return server;
 }
 
 if (require.main === module) {
