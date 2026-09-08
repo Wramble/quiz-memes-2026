@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>quiz</title>
+
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/blood.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+
+        <div style="position: absolute;right: 0;z-index: 9999;display: inline-flex;">
+            <div style="display: grid;">
+            <button onclick="let sound = document.getElementById('audioplayer'); sound.volume = 0.2">20%</button>
+            <button onclick="let sound = document.getElementById('audioplayer'); sound.volume = 1.0">100%</button>
+            </div>
+            <audio preload="none" id="audioplayer" controls loop src="media/back.mp3"></audio>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <h1 style="position: fixed; top: 0px; left: 0px; " id="number"></h1>
+                <section>
+                    <section>
+                        <h1>Сашенькин</h1>
+                        <h1>квиз</h1>
+                        <h2>Мемология</h2>
+                    </section>
+                    <section volumehalf>
+                        <h1>Темы</h1>
+                        <h3 class="fragment fade-up" style="text-align: left;">1. Разминка</h3>
+                        <h3 class="fragment fade-up" style="text-align: left;">2. ранний интернет</h3>
+                        <h3 class="fragment fade-up" style="text-align: left;">3. олдскул</h3>
+                        <h3 class="fragment fade-up" style="text-align: left;">4. youtube</h3>
+                        <h3 class="fragment fade-up" style="text-align: left;">5. вконтакте</h3>
+                        <h3 class="fragment fade-up" style="text-align: left;">6. музыка</h3>
+                        <h3 class="fragment fade-up" style="text-align: left;">7. обожаю это...</h3>
+                        <h3 class="fragment fade-up" style="text-align: left;">8. блиц</h3>
+                    </section>
+                    <section>
+                        <h1>Правила</h1>
+                        <h2 class="fragment fade-up" style="text-align: left;">1. Не подсматривать</h2>
+                        <h2 class="fragment fade-up" style="text-align: left;">2. Не гуглить</h2>
+                        <h2 class="fragment fade-up" style="text-align: left;">3. Не шазамить</h2>
+                        <h2 class="fragment fade-up" style="text-align: left;">4. Пить побольше ваши напитки</h2>
+                        <h2 class="fragment fade-up" style="text-align: left;">5. Кушать вкусную еду</h2>
+                        <h2 class="fragment fade-up" style="text-align: left;">6. Получать удовольствие</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Разминка</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <h2 class="fade-up">лёгкие вопросы - простые ответы <br>10 вопросов - 40 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate >
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="1">
+                        <h2>Это тренажер для чего?</h2>
+                        <img src="media/разминка/1.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="2">
+                        <h2>Кто это?</h2>
+                        <img src="media/разминка/2.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="3">
+                        <h2>Отгадайте ребус</h2>
+                        <img src="media/разминка/3.webp" height="500px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="4">
+                        <h2>Назовите мем по скриншоту</h2>
+                        <img src="media/разминка/4.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="5">
+                        <h2>Я хочу себе лицо... Как у кого?</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="6">
+                        <h2>Назовите исполнителя</h2>
+                        <video preload="none" controls data-autoplay src="media/разминка/6.mp4" height="900px"></video>
+                    </section>
+                    <section data-autoslide="30000" data-autoslide-auto stop-audio volumehalf q-num="7">
+                        <h2>Какой ID игрока в Standoff?</h2>
+                        <video preload="none" controls data-autoplay src="media/разминка/7.optimized.mp4" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="8">
+                        <h2>Закончите фразу</h2>
+                        <video preload="none" controls data-autoplay src="media/разминка/8.optimized.mp4" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="9">
+                        <h2>Закончите фразу: «Терпи, потому что...»</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="10">
+                        <h2>Что закрыто?</h2>
+                        <img src="media/разминка/10.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section >
+                        <h2>Это тренажер для чего?</h2>
+                        <img src="media/разминка/1.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/разминка/1_.webp" height="500px">
+                    </section>
+                    <section >
+                        <h2>Кто это?</h2>
+                        <img src="media/разминка/2.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/разминка/2_.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/разминка/3.webp" height="500px">
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/разминка/3_.optimized.mp4" height="900px"></video>
+                    </section>
+                    <section start-audio >
+                        <img src="media/разминка/4.webp" height="900px">
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/разминка/4_.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">Текнолоджия</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/разминка/5_.optimized.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">Уильям Дэфо</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/разминка/6.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">Toxis</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/разминка/7_.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">Данил Колбасенко</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/разминка/8_.optimized.mp4" height="900px"></video>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/разминка/9_.mp4" height="900px"></video>
+                    </section>
+                    <section start-audio>
+                        <img src="media/разминка/10.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/разминка/10_.webp" height="900px">
+                    </section>
+                    <section start-audio volumehalf>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>ранний интернет</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <h2 class="fade-up">Времена зарождения первых мемов.<br>10 вопросов - 40 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate start-audio>
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf  q-num="1">
+                        <h2>Что пропущено?</h2>
+                        <img src="media/ранний/1.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="2">
+                        <h2>Восстановите два слова в классическом одобрительном комментарии: «Аффтар ___, пеши ___»</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="3">
+                        <h2>Какой язык предлагали выучить человеку, не понимавшему русскоязычные комментарии в ЖЖ?</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="4">
+                        <h2>В каком городе проходила свадьба, давшая название герою мема?</h2>
+                        <img src="media/ранний/4.webp" height="700px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="5">
+                        <h2>Закончите фразу раннего Рунета:</h2>
+                        <h2>«Ф Бабруйск, ___!»</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="6">
+                        <h2>Как одним словом на жаргоне падонкафф отвечали на слишком длинный текст, который не смогли дочитать?</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="7">
+                        <h2>Как на олбанском выразить человеку похвалу?</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="8">
+                        <h2>Назовите интернет-субкультуру и сайт, чьим символом стал этот персонаж</h2>
+                        <img src="media/ранний/8.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="9">
+                        <h2>Как в раннем мемном Рунете намеренно называли кота?</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="10">
+                        <h2>Расставьте явления по времени появления в интернете — от самого раннего к самому позднему</h2>
+                        <img src="media/ранний/10.webp" height="600px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section >
+                        <h2>Что пропущено?</h2>
+                        <img src="media/ранний/1.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/ранний/1_.webp" height="900px">
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Классический одобрительный комментарий:</h2>
+                        <h2>«Аффтар ___, пеши ___»</h2>
+                    </section>
+                    <section data-auto-animate data-transition="fade-in">
+                        <h2>Классический одобрительный комментарий:</h2>
+                        <h2>«Аффтар жжот, пеши исчо»</h2>
+                    </section>
+                    <section >
+                        <h2>Какой язык предлагали выучить человеку, не понимавшему русскоязычные комментарии в ЖЖ?</h2>
+                        <h2 class="fragment fade-up">олбанский</h2>
+                    </section>
+                    <section >
+                        <h2>В каком городе проходила свадьба, давшая название герою мема?</h2>
+                    </section>
+                    <section >
+                        <img src="media/ранний/4_.webp" height="900px">
+                        <h2 class="fragment fade-up">фрязино</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Ф Бабруйск, ___!</h2>
+                    </section>
+                    <section data-auto-animate data-transition="fade-in">
+                        <h2>Ф Бабруйск, жыватное!</h2>
+                    </section>
+                    <section >
+                        <h2>Как одним словом на жаргоне падонкафф отвечали на слишком длинный текст, который не смогли дочитать?</h2><br>
+                        <h2 class="fragment fade-up">ниасилил</h2>
+                    </section>
+                    <section >
+                        <h2>Как на олбанском выразить человеку похвалу?</h2><br>
+                        <h2 class="fragment fade-up">кросавчег</h2>
+                    </section>
+                    <section >
+                        <h2>Назовите интернет-субкультуру и сайт, чьим символом стал этот персонаж.</h2>
+                        <img src="media/ранний/8.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/ранний/8_.webp" height="900px">
+                    </section>
+                    <section >
+                        <h2>Как в раннем мемном Рунете намеренно называли кота?</h2>
+                    </section>
+                    <section >
+                        <img src="media/ранний/9_.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/ранний/10.webp" height="900px">
+                        <h2 class="fragment fade-up">4 3 2 1</h2>
+                    </section>
+                    <section start-audio>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>олдскул</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <h2 class="fade-up">Олдскульные мемы <br>10 вопросов - 40 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate start-audio>
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="1">
+                        <h2>Как называется формат плаката с картинкой в чёрной рамке, крупным заголовком и пояснением снизу?</h2>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="2">
+                        <h2>Восстановите английское имя этого героя Rage Comics</h2>
+                        <img src="media/олдскул/2.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="3">
+                        <h2>Какая мотивирующая подпись чаще всего сопровождала эту фотографию?</h2>
+                        <img src="media/олдскул/3.webp" height="700px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="4">
+                        <h2>Как называется персонаж и какое действие он обычно обозначал?</h2>
+                        <img src="media/олдскул/4.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="5">
+                        <h2> Какие два испанских слова обычно стояли под этим лицом?</h2>
+                        <img src="media/олдскул/5.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="6">
+                        <h2>Какое имя часто упоминали в этом шаблоне?</h2>
+                        <img src="media/олдскул/6.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="7">
+                        <h2>В честь какой игры он получил название?</h2>
+                        <img src="media/олдскул/7.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="8">
+                        <h2>Что пропущено?</h2>
+                        <img src="media/олдскул/8.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="9">
+                        <h2>Назовите спортсмена, чьё лицо превратилось в одну из самых узнаваемых реакций Rage Comics</h2>
+                        <img src="media/олдскул/9.webp" height="700px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf q-num="10">
+                        <h2>Как называется мем?</h2>
+                        <img src="media/олдскул/10.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section >
+                        <h2>Как называется формат плаката с картинкой в чёрной рамке, крупным заголовком и пояснением снизу?</h2>
+                    </section>
+                    <section >
+                        <img src="media/олдскул/1_.webp" height="900px">
+                    </section>
+                    <section >
+                        <h2>Восстановите английское имя этого героя Rage Comics</h2>
+                    </section>
+                    <section >
+                        <img src="media/олдскул/2_.webp" height="900px">
+                    </section>
+                    <section >
+                        <h2>Какая мотивирующая подпись чаще всего сопровождала эту фотографию?</h2>
+                        <img src="media/олдскул/3.webp" height="700px">
+                    </section>
+                    <section >
+                        <img src="media/олдскул/3_.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/олдскул/4.webp" height="900px">
+                        <h2 class="fragment fade-up">trollface</h2>
+                    </section>
+                    <section >
+                        <h2> Какие два испанских слова обычно стояли под этим лицом?</h2>
+                        <img src="media/олдскул/5.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/олдскул/5_.webp" height="900px">
+                    </section>
+                    <section >
+                        <h2>Какое имя часто упоминали в этом шаблоне?</h2>
+                        <img src="media/олдскул/6.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/олдскул/6_.webp" height="900px">
+                    </section>
+                    <section >
+                        <h2>В честь какой игры он получил название?</h2>
+                        <img src="media/олдскул/7.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/олдскул/7_.webp" height="900px">
+                    </section>
+                    <section >
+                        <h2>Что пропущено?</h2>
+                        <img src="media/олдскул/8.webp" height="900px">
+                    </section>
+                    <section >
+                        <img src="media/олдскул/8_.webp" height="900px">
+                    </section>
+                    <section >
+                        <h2>Назовите спортсмена, чьё лицо превратилось в одну из самых узнаваемых реакций Rage Comics</h2>
+                        <img src="media/олдскул/9.webp" height="700px">
+                    </section>
+                    <section >
+                        <img src="media/олдскул/9_.webp" height="900px">
+                        <h2 class="fragment fade-up">яо минг</h2>
+                    </section>
+                    <section >
+                        <img src="media/олдскул/10.webp" height="900px">
+                        <h2 class="fragment fade-up">doge</h2>
+                    </section>
+                    <section start-audio>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>youtube</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <h2 class="fade-up">Ранние мемы и видео <br>10 вопросов - 40 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate >
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="1">
+                        <h2>Название мема?</h2>
+                        <video preload="none" controls data-autoplay src="media/ютуб/1.mp4" height="700px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="2">
+                        <h2>Вас всех сейчас...? (одним словом)</h2>
+                        <video preload="none" controls data-autoplay src="media/ютуб/2.mp4" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="3">
+                        <h2>Название видео?</h2>
+                        <video preload="none" controls data-autoplay src="media/ютуб/3.mp4" height="700px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="4">
+                        <h2>Кто главный герой песни?</h2>
+                        <audio preload="none" data-autoplay controls src="media/ютуб/4.optimized.mp3"></audio>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="5">
+                        <h2>Название видео?</h2>
+                        <video preload="none" controls data-autoplay src="media/ютуб/5.mkv" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="6">
+                        <h2>Назовите мем по первым 3-м секундам</h2>
+                        <audio preload="none" data-autoplay controls src="media/ютуб/6.optimized.mp3"></audio>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="7">
+                        <h2>Как она назвала всех этих птиц?</h2>
+                        <video preload="none" controls data-autoplay src="media/ютуб/7.optimized.mp4" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumehalf q-num="8">
+                        <h2>Назовите танец?</h2>
+                        <img src="media/ютуб/8.gif" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="9">
+                        <h2>Название видео?</h2>
+                        <video preload="none" controls data-autoplay src="media/ютуб/9.mp4" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio volumehalf q-num="10">
+                        <h2>Как называется эта серия мультфильмов?</h2>
+                        <video preload="none" controls data-autoplay src="media/ютуб/10.mp4#t=12" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/1.mp4#t=74" height="700px"></video>
+                        <h2 class="fragment fade-up">Пацан к успеху шел</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/2.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">зарикроллили / rickroll</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/3.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Keyboard Cat</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/4_.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Барсук (Badger)</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/5.mkv" height="700px"></video>
+                        <h2 class="fragment fade-up">Charlie bit my finger</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/6_.optimized.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Nyan Cat</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/7_.optimized.mp4#t=25" height="700px"></video>
+                        <h2 class="fragment fade-up">Курицами</h2>
+                    </section>
+                    <section start-audio>
+                        <img src="media/ютуб/8.gif" height="900px">
+                        <h2 class="fragment fade-up">Harlem Shake</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/9.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Me at the zoo</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/ютуб/10.mp4" height="700px"></video>
+                    </section>
+                    <section start-audio volumehalf>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>вконтакте</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <h2 class="fade-up">они завирусились в 00-е - 10-е <br>10 вопросов - 40 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate start-audio>
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull q-num="1">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/1.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="2">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/2.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="3">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/3.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="4">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/4.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf start-audio q-num="5">
+                        <h2>Куда нельзя просто взять и войти в изначальном варианте мема?</h2>
+                        <img src="media/вк/5.webp" height="800px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="6">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/6.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumehalf start-audio q-num="7">
+                        <h2>К кому обычно взывают эти коты?</h2>
+                        <img src="media/вк/7.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="8">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/8.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="9">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/9.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="10">
+                        <h2>Назовите мем</h2>
+                        <img src="media/вк/10.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/1.webp" height="800px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/1_.webp" height="800px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/2.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/2_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/3.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/3_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/4.webp" height="900px">
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/вк/4_.mp4#t=11" height="900px"></video>
+                        <h2 class="fragment fade-up">это фиаско, братан</h2>
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/5.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/5_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/6.webp" height="900px">
+                        <h2 class="fragment fade-up">ждун</h2>
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/7.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/7_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/8.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/8_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/9.webp" height="900px">
+                        <h2 class="fragment fade-up">шлеппа / floppa</h2>
+                    </section>
+                    <section start-audio>
+                        <img src="media/вк/10.webp" height="900px">
+                        <h2 class="fragment fade-up">омская птица</h2>
+                    </section>
+                    <section start-audio>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>музыка</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <h2 class="fade-up">Слышу одно, вижу другое <br>10 вопросов - 40 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate >
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="1">
+                        <audio preload="none" data-autoplay controls src="media/музыка/1.optimized.mp3#t=1"></audio>
+                        <br><img src="media/музыка/1.gif" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="2">
+                        <audio preload="none" data-autoplay controls src="media/музыка/2.optimized.mp3"></audio>
+                        <br><video preload="none" muted controls data-autoplay src="media/музыка/2.mp4#t=5" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="3">
+                        <audio preload="none" data-autoplay controls src="media/музыка/3.optimized.mp3#t=40"></audio>
+                        <br><video preload="none" muted controls data-autoplay src="media/музыка/3.optimized.mp4#t=32" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="4">
+                        <audio preload="none" data-autoplay controls src="media/музыка/4.optimized.mp3#t=29.5"></audio>
+                        <br><video preload="none" muted loop controls data-autoplay src="media/музыка/4.optimized.mp4#t=0" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="5">
+                        <audio preload="none" data-autoplay controls src="media/музыка/5.optimized.mp3#t=29"></audio>
+                        <br><video preload="none" muted controls data-autoplay loop src="media/музыка/5.optimized.mp4" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="6">
+                        <audio preload="none" data-autoplay controls src="media/музыка/6.optimized.mp3#t=1"></audio>
+                        <br><video preload="none" muted controls data-autoplay src="media/музыка/6.mp4" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="7">
+                        <audio preload="none" data-autoplay controls src="media/музыка/7.optimized.mp3#t=0"></audio>
+                        <br><video preload="none" muted controls data-autoplay loop src="media/музыка/7.optimized.mp4#t=0" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="8">
+                        <audio preload="none" data-autoplay controls src="media/музыка/8.optimized.mp3#t=28"></audio>
+                        <br><video preload="none" muted controls data-autoplay src="media/музыка/8.optimized.mp4#t=135" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="9">
+                        <audio preload="none" data-autoplay controls src="media/музыка/9.optimized.mp3#t=60"></audio>
+                        <br><video preload="none" muted controls data-autoplay src="media/музыка/9.mp4#t=90" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto stop-audio q-num="10">
+                        <audio preload="none" data-autoplay controls src="media/музыка/10.optimized.mp3#t=0"></audio>
+                        <br><video preload="none" muted controls data-autoplay src="media/музыка/10.optimized.mp4#t=0" height="900px"></video>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/1_.optimized.mp4#t=43" height="700px"></video>
+                        <h2 class="fragment fade-up">Christell</h2>
+                        <h2 class="fragment fade-up">Dubidubidu</h2>
+                        <h2 class="fragment fade-up">Chipi Chipi Chapa Chapa</h2>
+                    </section>
+                    <section stop-audio>
+                        <audio preload="none" data-autoplay controls src="media/музыка/1.optimized.mp3#t=35"></audio>
+                        <h2 class="fragment fade-up">AP$ENT</h2>
+                        <h2 class="fragment fade-up">Можно я с тобой</h2>
+                    </section>
+                    <section stop-audio>
+                        <audio preload="none" data-autoplay controls src="media/музыка/2.optimized.mp3#t=25"></audio><br>
+                        <video preload="none" controls data-autoplay muted src="media/музыка/2_.optimized.mp4#t=34" height="700px"></video>
+                        <h2 class="fragment fade-up">Mama Cass  </h2>
+                        <h2 class="fragment fade-up">Make Your Own Kind Of Music</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/2.mp4#t=13" height="700px"></video>
+                        <h2 class="fragment fade-up">PIKOTARO</h2>
+                        <h2 class="fragment fade-up">PPAP (Pen Pineapple Apple Pen)</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/3_.optimized.mp4#t=40" height="700px"></video>
+                        <h2 class="fragment fade-up">Jain</h2>
+                        <h2 class="fragment fade-up">Makeba</h2>
+                    </section>
+                    <section stop-audio> 
+                        <video preload="none" controls data-autoplay src="media/музыка/3.optimized.mp4#t=30" height="700px"></video>
+                        <h2 class="fragment fade-up">Tony Igy</h2>
+                        <h2 class="fragment fade-up">Astronomia</h2>
+                        <h2 class="fragment fade-up">Coffin Dance</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/4_.optimized.mp4#t=30" height="700px"></video>
+                        <h2 class="fragment fade-up">W&W</h2>
+                        <h2 class="fragment fade-up">OIIA OIIA (Spinning Cat)</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/4.optimized.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Raffaella Carrà</h2>
+                        <h2 class="fragment fade-up">Pedro</h2>
+                        <h2 class="fragment fade-up">Raccoon Dancing in a Circle</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls loop data-autoplay src="media/музыка/5.optimized.mp4#t=0" height="700px"></video>
+                        <h2 class="fragment fade-up">martin garrix</h2>
+                        <h2 class="fragment fade-up">animals</h2>
+                        <h2 class="fragment fade-up">OKay let's Go</h2>
+                    </section>
+                    <section stop-audio>
+                        <audio preload="none" data-autoplay controls src="media/музыка/5.optimized.mp3#t=10"></audio><br>
+                        <img class="fragment fade-up" src="media/музыка/5_.webp" height="900px">
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/6.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">The Cramps - Goo Goo Muck</h2>
+                        <h2 class="fragment fade-up">Lady Gaga - Bloody Mary</h2>
+                        <h2 class="fragment fade-up">Wednesday Dance</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/6_.optimized.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Engelwood </h2>
+                        <h2 class="fragment fade-up">Crystal Dolphin </h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/7.optimized.mp4#t=0" height="700px"></video>
+                        <h2 class="fragment fade-up">Bonnie Tyler</h2>
+                        <h2 class="fragment fade-up">Total Eclipse of the Heart</h2>
+                        <h2 class="fragment fade-up">Turn Around</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/7_.optimized.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Dr. Dre   </h2>
+                        <h2 class="fragment fade-up"> The Next Episode (ft. Snoop Dogg, Kurupt, Nate Dogg)</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/8.optimized.mp4#t=130" height="700px"></video>
+                        <h2 class="fragment fade-up">Witcher / Ведьмак</h2>
+                        <h2 class="fragment fade-up">Toss A Coin To Your Witcher</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/8_.mp4#t=28" height="700px"></video>
+                        <h2 class="fragment fade-up">LazyTown (Лентяево)  </h2>
+                        <h2 class="fragment fade-up">We are Number One</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/9.mp4#t=18" height="700px"></video>
+                        <h2 class="fragment fade-up">Haddaway</h2>
+                        <h2 class="fragment fade-up">What Is Love</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/9_.mp4#t=75" height="700px"></video>
+                        <h2 class="fragment fade-up">Noisestorm </h2>
+                        <h2 class="fragment fade-up"> Crab Rave</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/10.optimized.mp4" height="700px"></video>
+                        <h2 class="fragment fade-up">Shaggy</h2>
+                        <h2 class="fragment fade-up">Mr. Boombastic</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/музыка/10_.mp4#t=40" height="700px"></video>
+                        <h2 class="fragment fade-up">Scooter  </h2>
+                        <h2 class="fragment fade-up">How Much Is The Fish?</h2>
+                    </section>
+                    <section start-audio>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>обожаю это...</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <img class="fragment fade-up" src="media/обожаю/mem-obozhaju-eto-eto-zhe-18-360x270.webp" height="700px">
+                        <h2 class="fragment fade-up">10 вопросов - 40 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate >
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull q-num="1">
+                        <img src="media/обожаю/1.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="2">
+                        <img src="media/обожаю/2.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="3">
+                        <img src="media/обожаю/3.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="4">
+                        <img src="media/обожаю/4.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="5">
+                        <img src="media/обожаю/5.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="6">
+                        <img src="media/обожаю/6.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="7">
+                        <img src="media/обожаю/7.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="8">
+                        <img src="media/обожаю/8.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="9">
+                        <img src="media/обожаю/9.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto volumefull start-audio q-num="10">
+                        <img src="media/обожаю/10.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/1.webp" height="800px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/1_.webp" height="800px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/2.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/2_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/3.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/3_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/4.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/4_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/5.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/5_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/6.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/6_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/7.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/7_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/8.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/8_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/9.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/9_.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/10.webp" height="900px">
+                    </section>
+                    <section start-audio>
+                        <img src="media/обожаю/10_.webp" height="900px">
+                    </section>
+                    <section start-audio volumehalf>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>блиц</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Правила тура</h1>
+                        <h2 class="fade-up">отгадайте видео-мем по скриншоту <br>10 вопросов - 10 секунд на ответ</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Готовы ?</h1>
+                    </section>
+                    <section data-auto-animate >
+                        <h1>Поехали !</h1>
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto start-audio volumefull q-num="1">
+                        <img src="media/скриншот/1.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="2">
+                        <img src="media/скриншот/2.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="3">
+                        <img src="media/скриншот/3.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="4">
+                        <img src="media/скриншот/4.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="5">
+                        <img src="media/скриншот/5.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="6">
+                        <img src="media/скриншот/6.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="7">
+                        <img src="media/скриншот/7.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="8">
+                        <img src="media/скриншот/8.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="9">
+                        <img src="media/скриншот/9.webp" height="900px">
+                    </section>
+                    <section data-autoslide="10000" data-autoslide-auto volumefull start-audio q-num="10">
+                        <img src="media/скриншот/10.webp" height="900px">
+                    </section>
+                    <section data-autoslide="40000" data-autoslide-auto start-audio volumefull>
+                        <h1>Дописываем и сдаём</h1>
+                    </section>
+                    <section volumehalf>
+                        <h1>Проверяем</h1>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/1_.mp4#t=16" height="900px"></video>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/2_.mp4#t=38" height="900px"></video>
+                        <h2 class="fragment fade-up">патимейкер</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/3_.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">somebody toucha my spaghet</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/4_.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">виталя</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/5_.mp4#t=3" height="900px"></video>
+                        <h2 class="fragment fade-up">Живительная сила огурца</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/6_.mp4#t=10" height="900px"></video>
+                        <h2 class="fragment fade-up">духаст вячеславыч</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/7_.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">мафиозник</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/8_.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">похоже я выбрал неудачную неделю чтобы...</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/9_.mp4" height="900px"></video>
+                        <h2 class="fragment fade-up">повар спрашивает повара</h2>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/скриншот/10_.mp4#t=29" height="900px"></video>
+                        <h2 class="fragment fade-up">ты кто такой? давай, досвидания</h2>
+                    </section>
+                    <section start-audio volumehalf>
+                        <h1>Конец тура</h1>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <h1>подсчет очков</h1>
+                    </section>
+                    <section stop-audio>
+                        <video preload="none" controls data-autoplay src="media/100 POPULAR MEMES FOR FUNNY EDITING ¦ FREE DOWNLOAD ¦ NO COPYRIGHT (720p_60fps_H264-128kbit_AAC-English).optimized.mp4" height="900px"></video>
+                    </section>
+                </section>
+                <section>
+                    <section start-audio>
+                        <h1>награждение</h1>
+                    </section>
+                </section>
+                <section style="text-align: left;">
+                    <h1>THE END ?</h1>
+                    <p> <br> </p>
+                </section>
+            </div>	
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                width: 1920,
+                height: 1080,
+
+                hash: true,
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                let count = 0;
+
+                const medias = document.querySelectorAll('audio, video');
+
+                medias.forEach(element => {
+                    const timestamp = element.src.split('#t=')[1] ?? 0;
+
+                    let r = new XMLHttpRequest();					
+
+                    r.open("GET", element.src);
+
+                    r.responseType = "blob";
+
+                    r.onload = function() {
+                        element.src = URL.createObjectURL(r.response) + '#t=' + timestamp;
+
+                        count++;
+                        if (count == medias.length) {
+                            if (window.location.hostname != "localhost") {
+                                alert('Ready!');
+                            }
+                        }
+                    };
+
+                    r.send();
+                });
+            });
+        </script>
+    </body>
+</html>
