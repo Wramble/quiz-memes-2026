@@ -52,6 +52,7 @@ function view(p) {
   const resources = previewResources();
 
   f.className = "slide-frame";
+  f.allow = "autoplay";
   f.srcdoc = `<!doctype html><html><head>
     <base href="${location.origin}/">
     ${resources.styles}
@@ -60,7 +61,14 @@ function view(p) {
       .reveal-viewport { width: 100%; height: 100%; }
     </style>
     </head><body>
-    <div class="reveal"><div class="slides">${round}</div></div>
+    <div style="position:absolute;right:0;z-index:9999;display:inline-flex">
+      <div style="display:grid">
+        <button onclick="document.getElementById('audioplayer').volume = 0.2">20%</button>
+        <button onclick="document.getElementById('audioplayer').volume = 1">100%</button>
+      </div>
+      <audio preload="none" id="audioplayer" controls loop src="media/back.mp3"></audio>
+    </div>
+    <div class="reveal"><div class="slides"><h1 style="position:fixed;top:0;left:0" id="number"></h1>${round}</div></div>
     ${resources.scripts}
     <script>
       Reveal.initialize({
@@ -72,7 +80,13 @@ function view(p) {
         hash: false,
         plugins: [window.RevealNotes, window.RevealMarkdown, window.RevealHighlight].filter(Boolean)
       });
-      setTimeout(() => Reveal.slide(0, ${si}), 0);
+      setTimeout(() => {
+        Reveal.slide(0, ${si});
+        const video = Reveal.getCurrentSlide().querySelector('video');
+        if (!video) return;
+        video.preload = 'metadata';
+        video.load();
+      }, 0);
     </script></body></html>`;
   p.replaceChildren(f);
 }
