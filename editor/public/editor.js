@@ -44,12 +44,16 @@ function view(p) {
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
     <link rel="stylesheet" href="dist/theme/blood.css">
+    <style>
+      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+      .reveal-viewport { width: 100%; height: 100%; }
+    </style>
     <div class="reveal"><div class="slides">${round}</div></div>
-    <script src="dist/reveal.js"><\/script>
+    <script src="dist/reveal.js"></script>
     <script>
       Reveal.initialize({ width: 1920, height: 1080, embedded: true, controls: false, progress: false, hash: false });
       setTimeout(() => Reveal.slide(0, ${si}), 0);
-    <\/script>`;
+    </script>`;
   p.replaceChildren(f);
 }
 function draw() {
