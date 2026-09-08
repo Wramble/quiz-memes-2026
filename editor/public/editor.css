@@ -75,8 +75,11 @@ button {
 }
 .slide-frame {
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  max-height: 100%;
   border: 8px solid #e9efff;
   border-radius: 8px;
   background: #fff;
