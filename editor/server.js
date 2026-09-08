@@ -48,6 +48,10 @@ function createEditorServer({ rootDir }) {
         response.writeHead(200, { 'content-type': 'text/javascript; charset=utf-8' });
         return response.end(await fs.readFile(path.join(__dirname, 'public', 'editor.js')));
       }
+      if (request.method === 'GET' && request.url === '/editor/editor.css') {
+        response.writeHead(200, { 'content-type': 'text/css; charset=utf-8' });
+        return response.end(await fs.readFile(path.join(__dirname, 'public', 'editor.css')));
+      }
       return sendJson(response, 404, { error: 'Not found' });
     } catch (error) { return sendJson(response, 400, { error: error.message }); }
   });

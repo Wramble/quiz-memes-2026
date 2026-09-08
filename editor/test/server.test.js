@@ -59,3 +59,15 @@ test('opens an event stream for editor live reload', async (t) => {
   assert.match(response.headers['content-type'], /text\/event-stream/);
   response.destroy();
 });
+
+test('serves editor stylesheet', async (t) => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'quiz-editor-server-'));
+  await fs.writeFile(path.join(root, 'index.html'), '<html>quiz</html>');
+  await fs.mkdir(path.join(root, 'media'));
+  const server = createEditorServer({ rootDir: root });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  t.after(async () => { await new Promise((resolve) => server.close(resolve)); await fs.rm(root, { recursive: true, force: true }); });
+  const response = await request(server.address().port, 'GET', '/editor/editor.css');
+  assert.equal(response.status, 200);
+  assert.match(response.body, /--surface/);
+});
