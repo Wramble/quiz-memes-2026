@@ -34,8 +34,8 @@ export default class Playback {
 		this.canvas.className = 'playback animate__animated animate__fadeInLeft';
 		this.canvas.width = this.diameter;
 		this.canvas.height = this.diameter;
-		this.canvas.style.width = this.diameter2 + 'px';
-		this.canvas.style.height = this.diameter2 + 'px';
+		this.canvas.style.width = '17%';
+		this.canvas.style.height = 'auto';
 		this.context = this.canvas.getContext( '2d' );
 
 		this.container.appendChild( this.canvas );
