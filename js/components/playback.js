@@ -16,7 +16,7 @@ export default class Playback {
 		// Cosmetics
 		this.diameter = 500;
 		this.diameter2 = this.diameter/2;
-		this.thickness = 6;
+		this.thickness = 12;
 
 		// Flags if we are currently playing
 		this.playing = false;
@@ -34,8 +34,8 @@ export default class Playback {
 		this.canvas.className = 'playback animate__animated animate__fadeInLeft';
 		this.canvas.width = this.diameter;
 		this.canvas.height = this.diameter;
-		this.canvas.style.width = '17%';
-		this.canvas.style.height = 'auto';
+		this.canvas.style.width = 'auto';
+		this.canvas.style.height = '20%';
 		this.context = this.canvas.getContext( '2d' );
 
 		this.container.appendChild( this.canvas );
